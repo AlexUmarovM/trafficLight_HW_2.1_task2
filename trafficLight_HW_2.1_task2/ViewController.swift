@@ -23,17 +23,15 @@ class ViewController: UIViewController {
         redLightView.layer.cornerRadius = 65
         yellowLightView.layer.cornerRadius = 65
         greenLightView.layer.cornerRadius = 65
+        startButton.layer.cornerRadius = 10
         
     }
     var glowingLight: UIView!
     @IBAction func changeLight() {
         switch  glowingLight {
+            
         case nil:
             greenLightView.alpha = 0.2
-            startButton.setTitle("START", for: .normal)
-            glowingLight = redLightView
-            
-        case redLightView:
             redLightView.alpha = 1
             startButton.setTitle("NEXT", for: .normal)
             glowingLight = yellowLightView
