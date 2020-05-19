@@ -16,7 +16,9 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        redLightView.alpha = 0.2
+        yellowLightView.alpha = 0.2
+        greenLightView.alpha = 0.2
     }
    
     @IBAction func changeLight() {
