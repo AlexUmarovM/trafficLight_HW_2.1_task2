@@ -13,27 +13,29 @@ class ViewController: UIViewController {
     @IBOutlet var yellowLightView: UIView!
     @IBOutlet var greenLightView: UIView!
     @IBOutlet var startButton: UIButton!
-   
+              var glowingLight: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         redLightView.alpha = 0.2
         yellowLightView.alpha = 0.2
         greenLightView.alpha = 0.2
         
-        redLightView.layer.cornerRadius = 65
-        yellowLightView.layer.cornerRadius = 65
-        greenLightView.layer.cornerRadius = 65
+        redLightView.layer.cornerRadius = redLightView.frame.width/2
+        yellowLightView.layer.cornerRadius = yellowLightView.frame.width/2
+        greenLightView.layer.cornerRadius = greenLightView.frame.width/2
         startButton.layer.cornerRadius = 10
         
     }
-    var glowingLight: UIView!
+  
     @IBAction func changeLight() {
+        startButton.setTitle("NEXT", for: .normal)
+        
         switch  glowingLight {
             
         case nil:
             greenLightView.alpha = 0.2
             redLightView.alpha = 1
-            startButton.setTitle("NEXT", for: .normal)
             glowingLight = yellowLightView
         
         case yellowLightView:
